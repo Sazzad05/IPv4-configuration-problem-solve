@@ -1,0 +1,27 @@
+East Blue: 
+
+
+Router>en 
+Router#conf t 
+Router(config)#interface FastEthernet0/0 
+Router(config-if)#ip address 123.1.130.1 255.255.255.128 
+Router(config-if)#no shutdown 
+Router(config)#interface FastEthernet1/0 
+Router(config-if)#ip address 123.1.96.1 255.255.240.0 
+Router(config-if)#no shutdown 
+Router(config)#interface Serial2/0 
+Router(config-if)#ip address 123.1.130.145 255.255.255.252 
+Router(config-if)#no shutdown 
+ 
+
+Router(config)#ip route 0.0.0.0 0.0.0.0 123.1.130.146 
+ 
+
+Router(config)#router rip 
+Router(config-router)#version 2 
+Router(config-router)#no auto 
+Router(config-router)#no auto-summary 
+Router(config-router)#network 123.1.130.0 
+Router(config-router)#network 123.1.96.0 
+Router(config-router)#network 123.1.130.144 
+Router(config-router)#passive-interface Fa0/0 Router(config-router)#Passive-interface Fa1/0
