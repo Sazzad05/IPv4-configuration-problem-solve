@@ -1,0 +1,29 @@
+Reverse Mountain : 
+
+
+Router(config)#interface Serial2/0 
+Router(config-if)#ip address 123.1.130.142 255.255.255.252 
+Router(config-if)#no shutdown 
+Router(config)#interface Serial3/0 
+Router(config-if)#ip address 123.1.130.134 255.255.255.252 
+Router(config-if)#no shutdown 
+Router(config)#interface Serial6/0 
+Router(config-if)#ip address 123.1.130.146 255.255.255.252 
+Router(config-if)#no shutdown 
+Router(config)#interface Serial7/0 
+Router(config-if)#ip address 123.1.130.150 255.255.255.252 
+Router(config-if)#no shutdown 
+Router(config)#interface Serial8/0 
+Router(config-if)#ip address 123.1.130.138 255.255.255.252 
+Router(config-if)#no shutdown  
+
+ 
+Router(config)#ip route 123.1.128.0 255.255.254.0 123.1.130.133 
+Router(config)#ip route 123.1.112.0 255.255.248.0 123.1.130.137 
+Router(config)#ip route 123.1.120.0 255.255.248.0 123.1.130.137 
+Router(config)#ip route 123.1.64.0 255.255.224.0 123.1.130.137 
+Router(config)#ip route 123.1.0.0 255.255.192.0 123.1.130.141 
+Router(config)#ip route 0.0.0.0 0.0.0.0 123.1.130.141 5 
+Router(config)#ip route 123.1.130.0 255.255.255.128 123.1.130.145 
+Router(config)#ip route 123.1.96.0 255.255.240.0 123.1.130.145 
+Router(config)#ip route 123.0.0.0 255.255.0.0 123.1.130.149 
