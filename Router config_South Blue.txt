@@ -1,0 +1,23 @@
+South Blue: 
+
+
+Router>en 
+Router#conf t 
+Router(config)#interface FastEthernet0/0 
+Router(config-if)#ip address 123.0.0.1 255.255.0.0 
+Router(config)#interface Serial2/0 
+Router(config-if)#no shutdown 
+Router(config)#interface Serial2/0 
+Router(config-if)#ip address 123.1.130.149 255.255.255.252 
+Router(config-if)#no shutdown 
+
+ 
+ 
+Router(config)#ip route 0.0.0.0 0.0.0.0 123.1.130.150 
+Router(config)#router rip 
+Router(config-router)#version 2 
+Router(config-router)#no auto-summary 
+Router(config-router)#network 123.0.0.0 
+Router(config-router)#network 123.1.130.148 
+Router(config-router)#passive-interface Fa0/0 
+ 
