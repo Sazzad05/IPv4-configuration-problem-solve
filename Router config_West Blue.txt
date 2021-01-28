@@ -1,0 +1,20 @@
+West Blue: 
+
+
+Router>en 
+Router#conf t 
+Router(config)#interface Serial2/0 
+Router(config-if)#ip address 123.1.130.141 255.255.255.252 
+Router(config-if)#no shutdown 
+Router(config)#interface Serial3/0 
+Router(config-if)#ip address 123.1.130.153 255.255.255.252 
+Router(config-if)#no shutdown 
+Router(config)#interface FastEthernet0/0 
+Router(config-if)#ip address 123.1.0.1 255.255.192.0 
+Router(config-if)#no shutdown 
+
+ 
+Router(config)#ip route 0.0.0.0 0.0.0.0 123.1.130.142 
+Router(config)#ip route 123.1.112.0 255.255.248.0 123.1.130.154 
+Router(config)#ip route 123.1.120.0 255.255.248.0 123.1.130.154 
+Router(config)#ip route 123.1.64.0 255.255.224.0 123.1.130.154 
